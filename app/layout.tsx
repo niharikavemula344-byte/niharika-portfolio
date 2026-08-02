@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -16,9 +16,6 @@ export const metadata: Metadata = {
   title: "Niharika Vemula | Full Stack Developer & AI/ML Student",
   description:
     "Portfolio of Niharika Vemula, a Full Stack Developer and Computer Science (AI & ML) student building web and intelligent software products.",
-  other: {
-    "codex-preview": "development",
-  },
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
@@ -40,3 +37,4 @@ export default function RootLayout({
     </html>
   );
 }
+
