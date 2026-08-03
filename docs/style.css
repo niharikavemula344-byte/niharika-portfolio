@@ -366,7 +366,8 @@ footer h2 span {
   font-weight: 400;
 }
 
-.projects-list article div > p:last-child {
+.project-summary,
+.project-details p {
   max-width: 750px;
   color: #c3b9bd;
   font-family: Arial, sans-serif;
@@ -374,8 +375,70 @@ footer h2 span {
   line-height: 1.6;
 }
 
-.projects-list article:hover div > p:last-child {
+.projects-list article:hover .project-summary,
+.projects-list article:hover .project-details p {
   color: #594d52;
+}
+
+.project-details {
+  max-width: 780px;
+  padding-top: 14px;
+  animation: project-details-in 0.35s ease;
+}
+
+.project-details[hidden] {
+  display: none;
+}
+
+.project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.project-more,
+.github-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 10px 17px;
+  border: 1px solid rgba(255,255,255,0.45);
+  border-radius: 999px;
+  color: white;
+  background: transparent;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 0.25s, background 0.25s, border-color 0.25s, transform 0.25s;
+}
+
+.project-more:hover,
+.project-more:focus-visible,
+.github-link:hover,
+.github-link:focus-visible,
+.projects-list article:hover .project-more,
+.projects-list article:hover .github-link {
+  border-color: #594d52;
+  color: #594d52;
+  background: rgba(255,255,255,0.55);
+  transform: translateY(-2px);
+}
+
+@keyframes project-details-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 footer {
@@ -480,5 +543,19 @@ footer h2 {
   .projects-list article {
     grid-template-columns: 0.15fr 0.85fr;
     gap: 15px;
+  }
+
+  .projects-list h3 {
+    font-size: 32px;
+  }
+
+  .project-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .project-more,
+  .github-link {
+    width: 100%;
   }
 }

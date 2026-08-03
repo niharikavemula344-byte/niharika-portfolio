@@ -40,4 +40,19 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+
+  document.querySelectorAll(".project-more").forEach((button) => {
+    button.addEventListener("click", () => {
+      const projectContent = button.closest("article")?.querySelector(".project-details");
+
+      if (!projectContent) {
+        return;
+      }
+
+      const isExpanded = button.getAttribute("aria-expanded") === "true";
+      button.setAttribute("aria-expanded", String(!isExpanded));
+      button.textContent = isExpanded ? "More" : "Show Less";
+      projectContent.hidden = isExpanded;
+    });
+  });
 });
