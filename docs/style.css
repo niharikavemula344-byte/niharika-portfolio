@@ -131,6 +131,33 @@ a {
   line-height: 1.18;
 }
 
+.hero-social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: -10px 0 28px;
+  font-family: Arial, sans-serif;
+}
+
+.hero-social-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 14px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  transition: background 0.25s, border-color 0.25s, transform 0.25s;
+}
+
+.hero-social-links a:hover,
+.hero-social-links a:focus-visible {
+  border-color: #b05274;
+  background: var(--light-pink);
+  transform: translateY(-2px);
+}
+
 .hero-buttons {
   display: flex;
   flex-wrap: wrap;
@@ -375,6 +402,19 @@ footer h2 span {
   line-height: 1.6;
 }
 
+.project-details .tools-used {
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-left: 3px solid #e38bab;
+  color: #eadfe3;
+  background: rgba(255,255,255,0.06);
+}
+
+.projects-list article:hover .project-details .tools-used {
+  color: #493f43;
+  background: rgba(255,255,255,0.45);
+}
+
 .projects-list article:hover .project-summary,
 .projects-list article:hover .project-details p {
   color: #594d52;
@@ -399,7 +439,8 @@ footer h2 span {
 }
 
 .project-more,
-.github-link {
+.github-link,
+.live-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -422,8 +463,11 @@ footer h2 span {
 .project-more:focus-visible,
 .github-link:hover,
 .github-link:focus-visible,
+.live-link:hover,
+.live-link:focus-visible,
 .projects-list article:hover .project-more,
-.projects-list article:hover .github-link {
+.projects-list article:hover .github-link,
+.projects-list article:hover .live-link {
   border-color: #594d52;
   color: #594d52;
   background: rgba(255,255,255,0.55);
@@ -555,7 +599,8 @@ footer h2 {
   }
 
   .project-more,
-  .github-link {
+  .github-link,
+  .live-link {
     width: 100%;
   }
 }
