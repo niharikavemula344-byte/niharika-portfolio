@@ -16,6 +16,13 @@ export const metadata: Metadata = {
   title: "Niharika Vemula | Full Stack Developer & AI/ML Student",
   description:
     "Portfolio of Niharika Vemula, a Full Stack Developer and Computer Science (AI & ML) student building web and intelligent software products.",
+  keywords: ["Niharika Vemula", "Full Stack Developer", "AI ML", "Computer Science", "Portfolio"],
+  authors: [{ name: "Niharika Vemula" }],
+  openGraph: {
+    title: "Niharika Vemula | Full Stack Developer & AI/ML Student",
+    description: "Full-stack, AI, and computer-vision projects by Niharika Vemula.",
+    type: "website",
+  },
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
@@ -28,7 +35,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
