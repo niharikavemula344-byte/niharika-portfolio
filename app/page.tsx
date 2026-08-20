@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 const projects = [
   {
@@ -8,24 +9,28 @@ const projects = [
     title: "DocuMind AI",
     tech: "Python · Flask · LangChain · FAISS",
     text: "A retrieval-augmented PDF assistant that extracts document content, builds a searchable vector index and answers questions using relevant context.",
+    href: "https://github.com/niharikavemula344-byte/-DocuMind-AI-Intelligent-PDF-Question-Answering-System",
   },
   {
     no: "02",
     title: "Vision AI",
     tech: "Python · Flask · BLIP · OpenCV",
     text: "A computer vision web application that detects visual content and generates natural-language image captions through a clean, modular interface.",
+    href: "https://github.com/niharikavemula344-byte/VisionAI",
   },
   {
     no: "03",
-    title: "Face Recognition System",
+    title: "Face Detection System",
     tech: "Python · OpenCV · Computer Vision",
-    text: "A real-time face detection and recognition system using Haar Cascade classifiers, image preprocessing and live camera input.",
+    text: "An offline face-detection tool that validates inputs, locates frontal faces with a Haar cascade and exports annotated images.",
+    href: "https://github.com/niharikavemula344-byte/AI-Face-Detection-and-Recognition",
   },
   {
     no: "04",
     title: "Developer Portfolio",
     tech: "React · TypeScript · Responsive UI",
     text: "A responsive personal portfolio focused on accessible interactions, purposeful motion and a polished recruiter-facing presentation.",
+    href: "https://github.com/niharikavemula344-byte/niharika-portfolio",
   },
 ];
 
@@ -100,10 +105,13 @@ export default function Home() {
             <div className="portrait reveal">
               <div className="portraitRing" />
               <div className="portraitCard">
-                <img
+                <Image
                   src="/niharika-profile.jpg"
                   alt="Niharika Vemula"
                   className="portraitPhoto"
+                  width={640}
+                  height={800}
+                  priority
                 />
                 <small className="portraitLabel">NIHARIKA VEMULA</small>
               </div>
@@ -187,7 +195,7 @@ export default function Home() {
               <article key={project.no}>
                 <span className="projectNo">{project.no}</span>
                 <div><p>{project.tech}</p><h3>{project.title}</h3><small>{project.text}</small></div>
-                <span className="projectArrow">↗</span>
+                <a className="projectArrow" href={project.href} target="_blank" rel="noreferrer" aria-label={`View ${project.title} on GitHub`}>↗</a>
               </article>
             ))}
           </div>

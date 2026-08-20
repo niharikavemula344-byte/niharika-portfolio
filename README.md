@@ -1,7 +1,6 @@
-@'
 # Niharika Vemula — Developer Portfolio
 
-A modern and responsive personal portfolio showcasing my full-stack development skills, AI/ML projects, education, and certifications.
+This is my personal portfolio, built to keep my projects, skills, education, and contact details in one place. I wanted it to feel clean and personal while still being easy for recruiters and developers to scan.
 
 ## About Me
 
@@ -54,7 +53,50 @@ A real-time face detection and recognition system using Haar Cascade classifiers
 
 ## Installation
 
-Clone the repository:
+### Prerequisites
+
+- Node.js 22.13 or later
+- npm
+
+### Local development
 
 ```bash
 git clone https://github.com/niharikavemula344-byte/niharika-portfolio.git
+cd niharika-portfolio
+npm ci
+npm run dev
+```
+
+Open the local URL printed by Vite.
+
+## Quality checks
+
+```bash
+npm run lint
+npm test
+```
+
+The test command builds the deployment artifact and verifies the rendered worker response.
+
+## Project structure
+
+```text
+app/        Next.js pages, layout, and global styles
+public/     Static images and icons
+worker/     Cloudflare Worker entry point
+tests/      Rendered-output checks
+scripts/    Reproducible install, build, and validation scripts
+```
+
+## Things I paid attention to
+
+- Semantic sections and descriptive link labels
+- Keyboard-accessible navigation
+- Reduced-motion considerations
+- Responsive layouts for mobile and desktop
+- Optimized production build for Cloudflare Workers
+
+## Contact
+
+- [LinkedIn](https://www.linkedin.com/in/niharika-vemula-68575b2b6)
+- [GitHub](https://github.com/niharikavemula344-byte)
